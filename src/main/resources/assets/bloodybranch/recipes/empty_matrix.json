@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "MM",
+    "MM"
+
+  ],
+  "key": {
+    "M": {
+      "item": "bloodybranch:matrix_chard"
+    }
+
+  },
+  "result": {
+    "item": "bloodybranch:matrix",
+    "data": 0,
+    "count": 1
+  }
+}
