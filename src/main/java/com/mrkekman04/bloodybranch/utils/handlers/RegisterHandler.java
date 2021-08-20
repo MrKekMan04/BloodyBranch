@@ -1,9 +1,9 @@
 package com.mrkekman04.bloodybranch.utils.handlers;
 
 import com.mrkekman04.bloodybranch.init.InitItems;
+import com.mrkekman04.bloodybranch.items.BaseItemSubtypes;
 import com.mrkekman04.bloodybranch.lib.*;
 import com.mrkekman04.bloodybranch.main.Main;
-import com.mrkekman04.bloodybranch.utils.interfaces.IHasModel;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -24,7 +24,7 @@ public class RegisterHandler {
     @SubscribeEvent
     public static void onModelRegister(ModelRegistryEvent event) {
         for (Item item : InitItems.ITEMS) {
-            if (! (item instanceof IHasModel)) {
+            if (!(item instanceof BaseItemSubtypes)) {
                 Main.proxy.registerItemRenderer(item, 0, "inventory");
             }
         }
