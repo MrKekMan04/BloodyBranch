@@ -1,5 +1,5 @@
 package com.mrkekman04.bloodybranch.main;
-import com.mrkekman04.bloodybranch.misc.BloodyBranch;
+import com.mrkekman04.bloodybranch.misc.CreativeTabBloodyBranch;
 import com.mrkekman04.bloodybranch.proxy.CommonProxy;
 import com.mrkekman04.bloodybranch.reference.Reference;
 import net.minecraft.creativetab.CreativeTabs;
@@ -24,7 +24,7 @@ public class Main {
 
     // CreativeTab
 
-    public static final CreativeTabs BLOODY_BRANCH = new BloodyBranch("bloody_branch");
+    public static final CreativeTabs BLOODY_BRANCH = new CreativeTabBloodyBranch("bloody_branch");
 
 
     @Mod.EventHandler

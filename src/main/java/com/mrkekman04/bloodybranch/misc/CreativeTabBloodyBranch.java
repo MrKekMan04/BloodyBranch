@@ -4,8 +4,8 @@ import com.mrkekman04.bloodybranch.init.InitItems;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 
-public class BloodyBranch extends CreativeTabs {
-    public BloodyBranch(String label) {
+public class CreativeTabBloodyBranch extends CreativeTabs {
+    public CreativeTabBloodyBranch(String label) {
         super(label);
     }
 

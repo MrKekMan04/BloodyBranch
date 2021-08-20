@@ -34,13 +34,14 @@ public class ItemElement extends Item {
 
     @Override
     public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> items) {
-        if (tab == Main.BLOODY_BRANCH) {
-            for (EnumElement type : EnumElement.values()) {
-                items.add(new ItemStack(this, 1, type.ordinal()));
+        if (isInCreativeTab(tab)) {
+            if (tab == Main.BLOODY_BRANCH) {
+                for (EnumElement type : EnumElement.values()) {
+                    items.add(new ItemStack(this, 1, type.ordinal()));
+                }
             }
         }
     }
-
 }
 
 
