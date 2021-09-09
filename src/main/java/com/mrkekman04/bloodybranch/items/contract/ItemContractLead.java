@@ -11,7 +11,7 @@ import java.util.List;
 public class ItemContractLead extends ItemContract {
 
     public ItemContractLead(String name) {
-        super(name);
+        super(name, 63, true);
     }
 
     @Override

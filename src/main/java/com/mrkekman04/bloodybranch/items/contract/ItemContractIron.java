@@ -11,7 +11,7 @@ import java.util.List;
 public class ItemContractIron extends ItemContract {
 
     public ItemContractIron(String name) {
-        super(name);
+        super(name, 63, true);
     }
 
     @Override

@@ -11,7 +11,7 @@ import java.util.List;
 public class ItemContractTin extends ItemContract {
 
     public ItemContractTin(String name) {
-        super(name);
+        super(name, 63, true);
     }
 
     @Override

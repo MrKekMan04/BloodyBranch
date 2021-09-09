@@ -11,12 +11,12 @@ import java.util.List;
 public class ItemContractNickel extends ItemContract {
 
     public ItemContractNickel(String name) {
-        super(name);
+        super(name, 63, true);
     }
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(I18n.format("desc.nikel_contract1"));
-        tooltip.add(I18n.format("desc.nikel_contract2"));
+        tooltip.add(I18n.format("desc.nickel_contract1"));
+        tooltip.add(I18n.format("desc.nickel_contract2"));
     }
 }

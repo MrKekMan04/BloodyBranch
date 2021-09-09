@@ -11,7 +11,7 @@ import java.util.List;
 public class ItemContractSilver extends ItemContract {
 
     public ItemContractSilver(String name) {
-        super(name);
+        super(name, 63, true);
     }
 
     @Override

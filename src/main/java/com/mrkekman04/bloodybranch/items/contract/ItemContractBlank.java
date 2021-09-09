@@ -11,7 +11,7 @@ import java.util.List;
 public class ItemContractBlank extends ItemContract {
 
     public ItemContractBlank(String name) {
-        super(name);
+        super(name, 0, false);
     }
 
     @Override
