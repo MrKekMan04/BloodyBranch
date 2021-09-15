@@ -18,4 +18,9 @@ public class ItemContractBlank extends ItemContract {
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
         tooltip.add(I18n.format("desc.blank_contract"));
     }
+
+    @Override
+    public boolean hasContainerItem(ItemStack stack) {
+        return false;
+    }
 }
