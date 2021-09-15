@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+
+  "ingredients":
+  [
+
+    {
+      "item": "bloodybranch:contract_lead",
+      "data": 32767
+    },
+
+    {
+      "item": "bloodybranch:matrix",
+      "data": 0
+    }
+
+  ],
+
+  "result":
+  {
+    "item": "bloodybranch:matrix",
+    "data": 5,
+    "count": 1
+  }
+}

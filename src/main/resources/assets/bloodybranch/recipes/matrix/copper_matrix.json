@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+
+  "ingredients":
+  [
+
+    {
+      "item": "bloodybranch:contract_copper",
+      "data": 32767
+    },
+
+    {
+      "item": "bloodybranch:matrix",
+      "data": 0
+    }
+
+  ],
+
+  "result":
+  {
+    "item": "bloodybranch:matrix",
+    "data": 3,
+    "count": 1
+  }
+}
