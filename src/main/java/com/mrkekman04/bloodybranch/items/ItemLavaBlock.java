@@ -23,7 +23,7 @@ public class ItemLavaBlock extends BaseItem {
     public EnumActionResult onItemUse(EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
         if (! world.isRemote) {
             if (hand == EnumHand.MAIN_HAND) {
-                if (world.getBlockState(pos.offset(facing)).getBlock() == Blocks.AIR) {
+                if (world.isAirBlock(pos.offset(facing))) {
                     ItemStack Item = player.getHeldItem(hand);
                     Item.shrink(1);
                     world.setBlockState(pos.offset(facing), Blocks.FLOWING_LAVA.getDefaultState());
