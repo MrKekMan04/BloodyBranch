@@ -13,18 +13,13 @@ import net.minecraft.util.ResourceLocation;
 public class ItemElement extends Item {
 
     public ItemElement (String name) {
-
         ResourceLocation RS = new ResourceLocation(Reference.MOD_ID, name);
-
-
         setMaxDamage(0);
         setHasSubtypes(true);
         setCreativeTab(Main.BLOODY_BRANCH);
         setRegistryName(RS);
         setUnlocalizedName(name);
-
         InitItems.ITEMS.add(this);
-
     }
 
     @Override

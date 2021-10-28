@@ -32,7 +32,7 @@ public class ItemLavaBlock extends BaseItem {
 
             }
         }
-        return EnumActionResult.FAIL;
+        return EnumActionResult.SUCCESS;
     }
 
     @Override

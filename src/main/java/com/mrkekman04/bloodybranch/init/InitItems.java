@@ -38,4 +38,7 @@ public class InitItems
     public static final Item SPAWN_STONE = new ItemSpawnStone("spawnstone");
 
 
+    public static final Item BOTTLE_BLOOD = new ItemBottleBlood("bottleblood");
+
+
 }
