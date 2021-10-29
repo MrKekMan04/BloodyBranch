@@ -18,7 +18,6 @@ public class RegisterHandler {
     public static void onItemRegister(RegistryEvent.Register<Item> event) {
         event.getRegistry().registerAll(InitItems.ITEMS.toArray(new Item[0]));
 
-
     }
 
     @SubscribeEvent
@@ -49,5 +48,9 @@ public class RegisterHandler {
         for (EnumRune type : EnumRune.values()) {
             ModelLoader.setCustomModelResourceLocation(InitItems.RUNE, type.ordinal(), new ModelResourceLocation(InitItems.RUNE.getRegistryName() + "_of_" + type.toString().toLowerCase(), "inventory"));
         } // register runes
+
+        for (EnumBottleBlood type : EnumBottleBlood.values()) {
+            ModelLoader.setCustomModelResourceLocation(InitItems.BOTTLE_BLOOD, type.ordinal(), new ModelResourceLocation(InitItems.BOTTLE_BLOOD.getRegistryName() + "_" + type.toString().toLowerCase(), "inventory"));
+        } // register BottleBlood
     }
 }
