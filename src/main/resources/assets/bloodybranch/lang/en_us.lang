@@ -1,4 +1,14 @@
+#########################
+# ===: CreativeTab :=== #
+#########################
+
 itemGroup.bloody_branch=Bloody Branch
+
+
+###################
+# ===: Items :=== #
+###################
+
 item.matrix_chard.name=Matrix chard
 item.lava_core.name=Lava core
 item.bloody_branch.name=Bloody branch
@@ -63,6 +73,15 @@ item.spawnstone_chicken.name=Scroll of summon: Chicken
 item.spawnstone_ocelot.name=Scroll of summon: Ocelot
 item.spawnstone_mooshroom.name=Scroll of summon: Mooshroom
 item.spawnstone_parrot.name=Scroll of summon: Parrot
+item.bottleblood_lesser.name=Lesser bottle of blood
+item.bottleblood_medium.name=Medium bottle of blood
+item.bottleblood_large.name=Large bottle of blood
+
+
+#########################
+# ===: Description :=== #
+#########################
+
 desc.matrix_chard1=§dCombine to get empty matrix
 desc.matrix_chard2=§bHave 33%% drop chance, when sieving gravel
 desc.matrix_chard3=§bHave 25%% drop chance, when sieving sand
@@ -128,3 +147,6 @@ desc.spawnstone_chicken=§dPlace in the barrel with §blife essence§d, to summo
 desc.spawnstone_ocelot=§dPlace in the barrel with §blife essence§d, to summon: §6Ocelot
 desc.spawnstone_mooshroom=§dPlace in the barrel with §blife essence§d, to summon: §6Mooshroom
 desc.spawnstone_parrot=§dPlace in the barrel with §blife essence§d, to summon: §6Parrot
+desc.bottleblood_lesser=§dRight click to fill blood altar with 1000 LP
+desc.bottleblood_medium=§dRight click to fill blood altar with 3000 LP
+desc.bottleblood_large=§dRight click to fill blood altar with 5000 LP

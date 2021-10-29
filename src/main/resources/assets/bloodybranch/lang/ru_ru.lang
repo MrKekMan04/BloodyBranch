@@ -1,4 +1,14 @@
+################################
+# ===: Вкладка в креативе :=== #
+################################
+
 itemGroup.bloody_branch=Bloody Branch
+
+
+######################
+# ===: Предметы :=== #
+######################
+
 item.matrix_chard.name=Кусочек матрицы
 item.lava_core.name=Лавовое ядро
 item.bloody_branch.name=Кровавая ветвь
@@ -63,6 +73,15 @@ item.spawnstone_chicken.name=Свиток призыва: курица
 item.spawnstone_ocelot.name=Свиток призыва: оцелот
 item.spawnstone_mooshroom.name=Свиток призыва: муухомор
 item.spawnstone_parrot.name=Свиток призыва: попугай
+item.bottleblood_lesser.name=Маленький пузырёк с кровью
+item.bottleblood_medium.name=Средний пузырёк с кровью
+item.bottleblood_large.name=Большой пузырёк с кровью
+
+
+######################
+# ===: Описания :=== #
+######################
+
 desc.matrix_chard1=§dОбъедините, чтобы получить пустую матрицу
 desc.matrix_chard2=§bВыпадает при просейке гравия с 33%% шансом
 desc.matrix_chard3=§bВыпадает при просейке песка с 25%% шансом
@@ -128,5 +147,6 @@ desc.spawnstone_chicken=§dПоместите в бочку с §bжизненн
 desc.spawnstone_ocelot=§dПоместите в бочку с §bжизненной эссенцией§d, чтобы призвать: §6Оцелот
 desc.spawnstone_mooshroom=§dПоместите в бочку с §bжизненной эссенцией§d, чтобы призвать: §6Муухомор
 desc.spawnstone_parrot=§dПоместите в бочку с §bжизненной эссенцией§d, чтобы призвать: §6Попугай
-
-
+desc.bottleblood_lesser=§dПКМ по кровавому алтарю, чтобы наполнить его на 1000 LP
+desc.bottleblood_medium=§dПКМ по кровавому алтарю, чтобы наполнить его на 3000 LP
+desc.bottleblood_large=§dПКМ по кровавому алтарю, чтобы наполнить его на 5000 LP
