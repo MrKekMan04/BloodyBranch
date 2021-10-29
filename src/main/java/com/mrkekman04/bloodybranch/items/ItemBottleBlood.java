@@ -3,6 +3,8 @@ package com.mrkekman04.bloodybranch.items;
 import WayofTime.bloodmagic.tile.TileAltar;
 import com.mrkekman04.bloodybranch.lib.EnumBottleBlood;
 import com.mrkekman04.bloodybranch.main.Main;
+import net.minecraft.client.resources.I18n;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -13,6 +15,9 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+
+import javax.annotation.Nullable;
+import java.util.List;
 
 public class ItemBottleBlood extends BaseItemSubtypes {
 
@@ -51,7 +56,7 @@ public class ItemBottleBlood extends BaseItemSubtypes {
 
     @Override
     public String getUnlocalizedName(ItemStack stack) {
-        return this.getUnlocalizedName() + "." + EnumBottleBlood.values()[stack.getItemDamage()].name().toLowerCase();
+        return this.getUnlocalizedName() + "_" + EnumBottleBlood.values()[stack.getItemDamage()].name().toLowerCase();
     }
 
     @Override
@@ -63,5 +68,10 @@ public class ItemBottleBlood extends BaseItemSubtypes {
                 }
             }
         }
+    }
+
+    @Override
+    public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
+        tooltip.add(I18n.format("desc." + "bottleblood_" + EnumBottleBlood.values()[stack.getItemDamage()].name().toLowerCase()));
     }
 }
