@@ -2,10 +2,12 @@ package com.mrkekman04.bloodybranch.main;
 import com.mrkekman04.bloodybranch.misc.CreativeTabBloodyBranch;
 import com.mrkekman04.bloodybranch.proxy.CommonProxy;
 import com.mrkekman04.bloodybranch.reference.Reference;
+import com.mrkekman04.bloodybranch.utils.consoleMessage.ConsoleMsg;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
@@ -36,4 +38,8 @@ public class Main {
     @Mod.EventHandler
     public static void postInit(FMLPostInitializationEvent event) {};
 
+    @Mod.EventHandler
+    public void loadComplete(FMLLoadCompleteEvent event) {
+        ConsoleMsg.ModName();
+    }
 }
