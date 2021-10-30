@@ -1,9 +1,11 @@
 package com.mrkekman04.bloodybranch.utils.handlers;
 
+import com.mrkekman04.bloodybranch.init.InitBlocks;
 import com.mrkekman04.bloodybranch.init.InitItems;
 import com.mrkekman04.bloodybranch.items.BaseItemSubtypes;
 import com.mrkekman04.bloodybranch.lib.*;
 import com.mrkekman04.bloodybranch.main.Main;
+import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -17,7 +19,11 @@ public class RegisterHandler {
     @SubscribeEvent
     public static void onItemRegister(RegistryEvent.Register<Item> event) {
         event.getRegistry().registerAll(InitItems.ITEMS.toArray(new Item[0]));
+    }
 
+    @SubscribeEvent
+    static void onBlockRegister(RegistryEvent.Register<Block> event) {
+        event.getRegistry().registerAll(InitBlocks.BLOCKS.toArray(new Block[0]));
     }
 
     @SubscribeEvent
