@@ -1,0 +1,15 @@
+{
+
+  "variants" : {
+
+    "facing=north,working=false" :  {"model" : "bloodybranch:factory", "y": 180},
+    "facing=south,working=false" :  {"model" : "bloodybranch:factory"},
+    "facing=west,working=false" :  {"model" : "bloodybranch:factory", "y": 90},
+    "facing=east,working=false" :  {"model" : "bloodybranch:factory", "y": 270},
+    "facing=north,working=true" :  {"model" : "bloodybranch:factory_working", "y": 180},
+    "facing=south,working=true" :  {"model" : "bloodybranch:factory_working"},
+    "facing=west,working=true" :  {"model" : "bloodybranch:factory_working", "y": 90},
+    "facing=east,working=true" :  {"model" : "bloodybranch:factory_working", "y": 270}
+
+  }
+}
