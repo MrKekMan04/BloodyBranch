@@ -4,7 +4,7 @@ import scala.Console;
 
 public class ConsoleMsg {
 
-    static public void ModName() {
+    public static void ModName() {
         System.out.println("\u001b[" + 35 + ";1m" +
                 "\n" +
                 "╔╦═╦╦╦════╦╦══╦═╦════════╦╦═╗\n" +
@@ -14,7 +14,7 @@ public class ConsoleMsg {
                 "╚══════════╩═╩══════════════╝" + Console.RESET());
     }
 
-    static public void AuthorName() {
+    public static void AuthorName() {
         System.out.println("\u001b[" + 35 + ";1m" +
                 "\n" +
                 "╔══╦═══╦═══╦══╦════╦═══╦══╗  ╔══╗╔╗╔╗\n" +
