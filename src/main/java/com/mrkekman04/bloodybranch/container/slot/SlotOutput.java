@@ -10,9 +10,11 @@ public class SlotOutput extends SlotItemHandler {
         super(itemHandler, index, xPosition, yPosition);
     }
 
+
+
     @Override
     public int getItemStackLimit(@NotNull ItemStack stack) {
-        return 64;
+        return stack.getMaxStackSize();
     }
 
     @Override

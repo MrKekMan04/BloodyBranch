@@ -12,11 +12,12 @@ public class SlotInput extends SlotItemHandler {
 
     @Override
     public int getItemStackLimit(@NotNull ItemStack stack) {
-        return 64;
+        return stack.getMaxStackSize();
     }
 
     @Override
     public boolean isItemValid(@NotNull ItemStack stack) {
         return true;
     }
+
 }
