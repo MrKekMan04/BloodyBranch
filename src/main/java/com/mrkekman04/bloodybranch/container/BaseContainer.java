@@ -38,41 +38,4 @@ public class BaseContainer<T extends TileEntity> extends Container {
             addSlotToContainer(new Slot(player.inventory, i, xL2 + i * xW2, yT2));
         }
     }
-
-    @Override
-    public ItemStack transferStackInSlot(EntityPlayer player, int slotRaw)
-    {
-        ItemStack stack = ItemStack.EMPTY;
-        Slot slot = inventorySlots.get(slotRaw);
-
-        if (slot != null && slot.getHasStack())
-        {
-            ItemStack stackInSlot = slot.getStack();
-            stack = stackInSlot.copy();
-
-            // С помощью кода ниже мы предотвращаем краш при перетаскивании предметов нажатием Shift
-            if (slotRaw < 3)
-            {
-                if (!mergeItemStack(stackInSlot, 3, inventorySlots.size(), true))
-                {
-                    return ItemStack.EMPTY;
-                }
-            }
-            else if (!mergeItemStack(stackInSlot, 0, 3, false))
-            {
-                return ItemStack.EMPTY;
-            }
-
-            if (stackInSlot.isEmpty())
-            {
-                slot.putStack(ItemStack.EMPTY);
-            }
-
-            else
-            {
-                slot.onSlotChanged();
-            }
-        }
-        return stack;
-    }
 }
