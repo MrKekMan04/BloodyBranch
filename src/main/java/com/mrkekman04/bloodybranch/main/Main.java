@@ -1,8 +1,8 @@
 package com.mrkekman04.bloodybranch.main;
 import com.mrkekman04.bloodybranch.init.InitTile;
 import com.mrkekman04.bloodybranch.misc.CreativeTabBloodyBranch;
-import com.mrkekman04.bloodybranch.proxy.CommonProxy;
 import com.mrkekman04.bloodybranch.proxy.Proxy;
+import com.mrkekman04.bloodybranch.utils.handlers.RecipeHandler;
 import com.mrkekman04.bloodybranch.reference.Reference;
 import com.mrkekman04.bloodybranch.utils.consoleMessage.ConsoleMsg;
 import com.mrkekman04.bloodybranch.utils.handlers.GuiHandler;
@@ -44,6 +44,8 @@ public class Main {
     public static void Init(FMLInitializationEvent event) {
         NetworkRegistry.INSTANCE.registerGuiHandler(Main.instance, new GuiHandler());
         proxy.init(event);
+
+        RecipeHandler.initRecipes();
     };
 
     @Mod.EventHandler
