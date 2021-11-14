@@ -34,22 +34,23 @@ public class ItemBottleBlood extends BaseItemSubtypes {
         if (tileEntity instanceof TileAltar) {
             ItemStack item = player.getHeldItem(hand);
             TileAltar tileAltar = (TileAltar) tileEntity;
-            switch (item.getItemDamage()) {
-                case 0:
-                    tileAltar.fillMainTank(1000);
-                    break;
-                case 1:
-                    tileAltar.fillMainTank(3000);
-                    break;
-                case 2:
-                    tileAltar.fillMainTank(5000);
-                    break;
+            if (!item.isEmpty()) {
+                switch (item.getItemDamage()) {
+                    case 0:
+                        tileAltar.fillMainTank(1000);
+                        break;
+                    case 1:
+                        tileAltar.fillMainTank(3000);
+                        break;
+                    case 2:
+                        tileAltar.fillMainTank(5000);
+                        break;
+                }
+                if (!player.isCreative()) {
+                    item.shrink(1);
+                }
+                return EnumActionResult.SUCCESS;
             }
-            if (!player.isCreative()) {
-                item.shrink(1);
-            }
-            return EnumActionResult.SUCCESS;
-
         }
         return EnumActionResult.FAIL;
     }
