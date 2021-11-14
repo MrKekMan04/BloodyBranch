@@ -1,7 +1,6 @@
 package com.mrkekman04.bloodybranch.core.helper;
 
 import com.google.common.base.Function;
-import com.sun.javafx.scene.traversal.Direction;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;

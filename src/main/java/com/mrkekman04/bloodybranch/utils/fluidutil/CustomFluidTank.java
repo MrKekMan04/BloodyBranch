@@ -44,7 +44,7 @@ public class CustomFluidTank extends FluidTank {
     }
 
     @Override
-    public void setFluid(@org.jetbrains.annotations.Nullable FluidStack fluid) {
+    public void setFluid(@Nullable FluidStack fluid) {
         super.setFluid(fluid);
     }
 

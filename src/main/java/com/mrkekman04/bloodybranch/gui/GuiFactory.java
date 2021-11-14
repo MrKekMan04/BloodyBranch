@@ -7,7 +7,6 @@ import com.mrkekman04.bloodybranch.reference.Reference;
 import com.mrkekman04.bloodybranch.tile.TileEntityFactory;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.inventory.GuiContainer;
-import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
@@ -16,7 +15,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidStack;
 import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.RenderTexture;
 
 import java.util.ArrayList;
 import java.util.List;

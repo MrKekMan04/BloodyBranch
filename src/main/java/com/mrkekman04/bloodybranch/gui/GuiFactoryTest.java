@@ -1,11 +1,9 @@
 package com.mrkekman04.bloodybranch.gui;
 
-import com.mrkekman04.bloodybranch.container.ContainerFactory;
 import com.mrkekman04.bloodybranch.container.ContainerFactoryTest;
 import com.mrkekman04.bloodybranch.core.helper.RenderHelpers;
 import com.mrkekman04.bloodybranch.gui.component.DrawTooltip;
 import com.mrkekman04.bloodybranch.reference.Reference;
-import com.mrkekman04.bloodybranch.tile.TileEntityFactory;
 import com.mrkekman04.bloodybranch.tile.TileFactory;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.inventory.GuiContainer;

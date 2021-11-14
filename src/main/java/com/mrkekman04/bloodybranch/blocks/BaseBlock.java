@@ -4,7 +4,6 @@ import com.mrkekman04.bloodybranch.init.InitBlocks;
 import com.mrkekman04.bloodybranch.init.InitItems;
 import com.mrkekman04.bloodybranch.main.Main;
 import net.minecraft.block.Block;
-import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemBlock;
 

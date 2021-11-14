@@ -3,9 +3,7 @@ package com.mrkekman04.bloodybranch.blocks;
 import WayofTime.bloodmagic.block.BlockLifeEssence;
 import com.mrkekman04.bloodybranch.core.helper.FluidHelper;
 import com.mrkekman04.bloodybranch.main.Main;
-import com.mrkekman04.bloodybranch.tile.TileEntityFactory;
 import com.mrkekman04.bloodybranch.tile.TileFactory;
-import com.mrkekman04.bloodybranch.utils.handlers.CustomItemStackHandler;
 import com.mrkekman04.bloodybranch.utils.handlers.FluidHandler;
 import com.mrkekman04.bloodybranch.utils.itemStackUtil.NBTTagCompoundHelper;
 import net.minecraft.block.SoundType;
@@ -104,8 +102,6 @@ public class BlockFactoryTest extends BaseBlockHasTileEntity {
                 CapabilityEnergy.ENERGY.readNBT(tile.getEnergyStorage(), null, nbtTagCompound.getTag("energyStorage"));
             }
         }
-
-
     }
 
     @Override
