@@ -48,7 +48,7 @@ minecraft {
     accessTransformers = [file('src/main/resources/META-INF/jei_at.cfg')]
     runs {
         client {
-//            args '--username', 'nikitaVoV'
+//            args '--username', 'MrKekMan04'
             workingDirectory project.file('run/client')
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
             property 'forge.logging.console.level', 'debug'
@@ -73,6 +73,7 @@ dependencies {
     runtimeOnly 'CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.656'
     compileOnly 'mezz.jei:jei_1.12.2:4.16.1.302:api'
     runtimeOnly fg.deobf('mezz.jei:jei_1.12.2:4.16.1.302')
+
 
     compile fg.deobf('curse.maven:bm-224791:2822288')
     compile fg.deobf('curse.maven:ga-228832:2645992')
