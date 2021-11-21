@@ -176,7 +176,8 @@ public class TileBloodFactory extends TileMachineInventory implements ITickable 
                 if (activeRecipe == null) {
                     RecipesFactory recipe = RecipesFactoryHandler.getRecipe(inventory.get(0));
                     if (recipe != null) {
-                        if (energyStorage.getEnergyStored() >= recipe.getEnergyPerTick() * totalTime && tank.getFluidAmount() >= recipe.getFluidPerTick() * totalTime) {
+                        int time = recipe.getTime();
+                        if (energyStorage.getEnergyStored() >= recipe.getEnergyPerTick() * time && tank.getFluidAmount() >= recipe.getFluidPerTick() * time) {
                             activeRecipe = recipe;
                             totalTime = recipe.getTime();
                             energyPerTick = recipe.getEnergyPerTick();
