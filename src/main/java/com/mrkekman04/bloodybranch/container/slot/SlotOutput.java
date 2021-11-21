@@ -1,24 +1,17 @@
 package com.mrkekman04.bloodybranch.container.slot;
 
+import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.items.SlotItemHandler;
-import org.jetbrains.annotations.NotNull;
 
-public class SlotOutput extends SlotItemHandler {
-    public SlotOutput(IItemHandler itemHandler, int index, int xPosition, int yPosition) {
-        super(itemHandler, index, xPosition, yPosition);
-    }
+public class SlotOutput extends Slot {
 
-
-
-    @Override
-    public int getItemStackLimit(@NotNull ItemStack stack) {
-        return stack.getMaxStackSize();
+    public SlotOutput(IInventory inventoryIn, int index, int xPosition, int yPosition) {
+        super(inventoryIn, index, xPosition, yPosition);
     }
 
     @Override
-    public boolean isItemValid(@NotNull ItemStack stack) {
+    public boolean isItemValid(ItemStack stack) {
         return false;
     }
 }

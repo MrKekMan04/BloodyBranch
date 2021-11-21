@@ -82,7 +82,7 @@ item.bottleblood_large.name=Large Bottle Of Blood
 # ===: Blocks :=== #
 ####################
 
-tile.factory.name=Blood Factory
+tile.blood_factory.name=Blood Factory
 tile.factory.inventoryName=Blood Factory
 
 

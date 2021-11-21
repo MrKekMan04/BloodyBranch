@@ -3,7 +3,7 @@ package com.mrkekman04.bloodybranch.blocks;
 import WayofTime.bloodmagic.block.BlockLifeEssence;
 import com.mrkekman04.bloodybranch.core.helper.FluidHelper;
 import com.mrkekman04.bloodybranch.main.Main;
-import com.mrkekman04.bloodybranch.tile.TileFactory;
+import com.mrkekman04.bloodybranch.tile.TileBloodFactory;
 import com.mrkekman04.bloodybranch.utils.handlers.FluidHandler;
 import com.mrkekman04.bloodybranch.utils.itemStackUtil.NBTTagCompoundHelper;
 import net.minecraft.block.SoundType;
@@ -28,12 +28,12 @@ import net.minecraftforge.energy.CapabilityEnergy;
 import net.minecraftforge.fluids.FluidStack;
 import org.jetbrains.annotations.Nullable;
 
-public class BlockFactoryTest extends BaseBlockHasTileEntity {
+public class BlockBloodFactory extends BaseBlockHasTileEntity {
 
     public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
     public static final PropertyBool WORKING = PropertyBool.create("working");
 
-    public BlockFactoryTest(String name, Material material) {
+    public BlockBloodFactory(String name, Material material) {
         super(name, material);
         this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(WORKING, false));
 
@@ -57,8 +57,8 @@ public class BlockFactoryTest extends BaseBlockHasTileEntity {
         }
 
         TileEntity tile = worldIn.getTileEntity(pos);
-        if (tile instanceof TileFactory) {
-            playerIn.openGui(Main.instance, 1, worldIn, pos.getX(), pos.getY(), pos.getZ());
+        if (tile instanceof TileBloodFactory) {
+            playerIn.openGui(Main.instance, 0, worldIn, pos.getX(), pos.getY(), pos.getZ());
             return true;
         }
         return false;
@@ -91,8 +91,8 @@ public class BlockFactoryTest extends BaseBlockHasTileEntity {
         if (worldIn.isRemote) return;
         NBTTagCompound nbtTagCompound = NBTTagCompoundHelper.ensureTagCompound(stack);
         TileEntity tileEntity = worldIn.getTileEntity(pos);
-        if (tileEntity instanceof TileFactory) {
-            TileFactory tile = (TileFactory) tileEntity;
+        if (tileEntity instanceof TileBloodFactory) {
+            TileBloodFactory tile = (TileBloodFactory) tileEntity;
 
             if (tile.getTank() != null && !nbtTagCompound.hasNoTags()) {
                 tile.getTank().readFromNBT(nbtTagCompound.getCompoundTag("tank"));
@@ -108,8 +108,8 @@ public class BlockFactoryTest extends BaseBlockHasTileEntity {
     public void onBlockHarvested(World worldIn, BlockPos pos, IBlockState state, EntityPlayer player) {
         if (worldIn.isRemote) return;
         TileEntity tileEntity = worldIn.getTileEntity(pos);
-        if (tileEntity instanceof TileFactory) {
-            TileFactory tile = (TileFactory) tileEntity;
+        if (tileEntity instanceof TileBloodFactory) {
+            TileBloodFactory tile = (TileBloodFactory) tileEntity;
             ItemStack item = new ItemStack(this);
             NBTTagCompound compound = new NBTTagCompound();
             if (tile.getTank() != null) {
@@ -132,8 +132,8 @@ public class BlockFactoryTest extends BaseBlockHasTileEntity {
     public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
         if (worldIn.isRemote) return;
         TileEntity tileEntity = worldIn.getTileEntity(pos);
-        if (tileEntity instanceof TileFactory) {
-            TileFactory tile = (TileFactory) tileEntity;
+        if (tileEntity instanceof TileBloodFactory) {
+            TileBloodFactory tile = (TileBloodFactory) tileEntity;
             for (ItemStack item : tile.getInventory()) {
                 if (!item.isEmpty()) {
                     InventoryHelper.spawnItemStack(worldIn, pos.getX(), pos.getY(), pos.getZ(), item);
@@ -150,6 +150,6 @@ public class BlockFactoryTest extends BaseBlockHasTileEntity {
     @Nullable
     @Override
     public TileEntity createTileEntity(World world, IBlockState state) {
-        return new TileFactory();
+        return new TileBloodFactory();
     }
 }

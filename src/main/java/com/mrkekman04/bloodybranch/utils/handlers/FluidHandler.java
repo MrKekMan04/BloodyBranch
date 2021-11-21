@@ -1,7 +1,7 @@
 package com.mrkekman04.bloodybranch.utils.handlers;
 
 import com.mrkekman04.bloodybranch.core.helper.FluidHelper;
-import com.mrkekman04.bloodybranch.tile.TileFactory;
+import com.mrkekman04.bloodybranch.tile.TileBloodFactory;
 import com.mrkekman04.bloodybranch.utils.fluidutil.CustomFluidTank;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
@@ -109,9 +109,9 @@ public class FluidHandler {
 
     public static boolean fillTankByBucket(EntityPlayer player, World world, BlockPos pos, ItemStack item, FluidStack fluid, boolean simulate) {
         TileEntity tile = world.getTileEntity(pos);
-        if (tile instanceof TileFactory) {
-            TileFactory tileFactory = (TileFactory) tile;
-            CustomFluidTank tank = tileFactory.getTank();
+        if (tile instanceof TileBloodFactory) {
+            TileBloodFactory tileBloodFactory = (TileBloodFactory) tile;
+            CustomFluidTank tank = tileBloodFactory.getTank();
 
             FluidActionResult fluidActionResult = FluidUtil.tryEmptyContainer(item, tank, Integer.MAX_VALUE, null, !simulate);
             if (!simulate && fluidActionResult.isSuccess()) {
@@ -132,9 +132,9 @@ public class FluidHandler {
 
     public static boolean drainTankByBucket(EntityPlayer player, World world, BlockPos pos, ItemStack item, boolean simulate) {
         TileEntity tile = world.getTileEntity(pos);
-        if (tile instanceof TileFactory) {
-            TileFactory tileFactory = (TileFactory) tile;
-            CustomFluidTank tank = tileFactory.getTank();
+        if (tile instanceof TileBloodFactory) {
+            TileBloodFactory tileBloodFactory = (TileBloodFactory) tile;
+            CustomFluidTank tank = tileBloodFactory.getTank();
             FluidActionResult fluidActionResult = FluidUtil.tryFillContainer(item, tank, Integer.MAX_VALUE, player, !simulate);
             if (fluidActionResult == FluidActionResult.FAILURE) return false;
             if (!simulate) {

@@ -1,11 +1,8 @@
 package com.mrkekman04.bloodybranch.utils.handlers;
 
-import com.mrkekman04.bloodybranch.container.ContainerFactory;
-import com.mrkekman04.bloodybranch.container.ContainerFactoryTest;
-import com.mrkekman04.bloodybranch.gui.GuiFactory;
-import com.mrkekman04.bloodybranch.gui.GuiFactoryTest;
-import com.mrkekman04.bloodybranch.tile.TileEntityFactory;
-import com.mrkekman04.bloodybranch.tile.TileFactory;
+import com.mrkekman04.bloodybranch.container.ContainerBloodFactory;
+import com.mrkekman04.bloodybranch.gui.GuiBloodFactory;
+import com.mrkekman04.bloodybranch.tile.TileBloodFactory;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
@@ -23,10 +20,7 @@ public class GuiHandler implements IGuiHandler {
         if (te != null) {
             switch (ID) {
                 case 0:
-                    return new ContainerFactory(player, (TileEntityFactory) te);
-
-                case 1:
-                    return new ContainerFactoryTest(player, (TileFactory) te);
+                    return new ContainerBloodFactory(player, (TileBloodFactory) te);
             }
         }
         return null;
@@ -40,10 +34,7 @@ public class GuiHandler implements IGuiHandler {
         if (te != null) {
             switch (ID) {
                 case 0:
-                    return new GuiFactory((TileEntityFactory) te, player);
-
-                case 1:
-                    return new GuiFactoryTest((TileFactory) te, player);
+                    return new GuiBloodFactory((TileBloodFactory) te, player);
             }
         }
         return null;

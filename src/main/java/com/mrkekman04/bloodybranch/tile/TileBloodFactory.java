@@ -1,7 +1,7 @@
 package com.mrkekman04.bloodybranch.tile;
 
 import WayofTime.bloodmagic.block.BlockLifeEssence;
-import com.mrkekman04.bloodybranch.blocks.BlockFactory;
+import com.mrkekman04.bloodybranch.blocks.BlockBloodFactory;
 import com.mrkekman04.bloodybranch.core.helper.RecipeHelper;
 import com.mrkekman04.bloodybranch.energy.CustomEnergyStorage;
 import com.mrkekman04.bloodybranch.items.ItemMatrix;
@@ -24,7 +24,7 @@ import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import org.jetbrains.annotations.Nullable;
 
-public class TileFactory extends TileMachineInventory implements ITickable {
+public class TileBloodFactory extends TileMachineInventory implements ITickable {
 
     private int totalTime;
     private int processTime;
@@ -39,7 +39,7 @@ public class TileFactory extends TileMachineInventory implements ITickable {
     //Slots :
     //0 Input
     //1 Output
-    public TileFactory() {
+    public TileBloodFactory() {
         super(2);
     }
 
@@ -171,7 +171,7 @@ public class TileFactory extends TileMachineInventory implements ITickable {
 
             if (inventory.get(0).isEmpty()) {
                 reset();
-                world.setBlockState(pos, world.getBlockState(pos).withProperty(BlockFactory.WORKING, false));
+                world.setBlockState(pos, world.getBlockState(pos).withProperty(BlockBloodFactory.WORKING, false));
             } else {
                 if (activeRecipe == null) {
                     RecipesFactory recipe = RecipesFactoryHandler.getRecipe(inventory.get(0));
@@ -190,7 +190,7 @@ public class TileFactory extends TileMachineInventory implements ITickable {
                 if (activeRecipe == null
                         || totalTime < 0
                         || !RecipeHelper.canMergeItemStack(activeRecipe.getOutputResource(), inventory.get(1))) {
-                    world.setBlockState(pos, world.getBlockState(pos).withProperty(BlockFactory.WORKING, false));
+                    world.setBlockState(pos, world.getBlockState(pos).withProperty(BlockBloodFactory.WORKING, false));
                     reset();
                     return;
                 }
@@ -199,8 +199,8 @@ public class TileFactory extends TileMachineInventory implements ITickable {
                     if (RecipeHelper.canMergeItemStack(activeRecipe.getOutputResource(), inventory.get(1))) {
                         if (RecipesFactoryHandler.getRecipe(inventory.get(0)) != null) {
 
-                            if (world.getBlockState(pos) == world.getBlockState(pos).withProperty(BlockFactory.WORKING, false)) {
-                                world.setBlockState(pos, world.getBlockState(pos).withProperty(BlockFactory.WORKING, true));
+                            if (world.getBlockState(pos) == world.getBlockState(pos).withProperty(BlockBloodFactory.WORKING, false)) {
+                                world.setBlockState(pos, world.getBlockState(pos).withProperty(BlockBloodFactory.WORKING, true));
                             }
 
                             processTime++;

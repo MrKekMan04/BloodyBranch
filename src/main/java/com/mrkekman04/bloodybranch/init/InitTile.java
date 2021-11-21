@@ -1,8 +1,7 @@
 package com.mrkekman04.bloodybranch.init;
 
 import com.mrkekman04.bloodybranch.reference.Reference;
-import com.mrkekman04.bloodybranch.tile.TileEntityFactory;
-import com.mrkekman04.bloodybranch.tile.TileFactory;
+import com.mrkekman04.bloodybranch.tile.TileBloodFactory;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -11,8 +10,7 @@ public class InitTile {
     public static void init() {
 
         // GameRegistry.registerTileEntity(TILE_ENTITY_CLASS.class, new ResourceLocation(Reference.MOD_ID, "TILE_NAME"));
-        GameRegistry.registerTileEntity(TileEntityFactory.class, new ResourceLocation(Reference.MOD_ID, "tile_factory"));
-        GameRegistry.registerTileEntity(TileFactory.class, new ResourceLocation(Reference.MOD_ID, "tileentity_factory"));
+        GameRegistry.registerTileEntity(TileBloodFactory.class, new ResourceLocation(Reference.MOD_ID, "tile_blood_factory"));
 
     }
 }

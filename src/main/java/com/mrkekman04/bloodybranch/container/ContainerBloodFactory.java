@@ -1,8 +1,8 @@
 package com.mrkekman04.bloodybranch.container;
 
-import com.mrkekman04.bloodybranch.container.slot.SlotInputTest;
-import com.mrkekman04.bloodybranch.container.slot.SlotOutoutTest;
-import com.mrkekman04.bloodybranch.tile.TileFactory;
+import com.mrkekman04.bloodybranch.container.slot.SlotInput;
+import com.mrkekman04.bloodybranch.container.slot.SlotOutput;
+import com.mrkekman04.bloodybranch.tile.TileBloodFactory;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IContainerListener;
 import net.minecraft.inventory.Slot;
@@ -10,9 +10,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ContainerFactoryTest extends BaseContainer<TileFactory>{
+public class ContainerBloodFactory extends BaseContainer<TileBloodFactory>{
 
-    private final TileFactory te;
+    private final TileBloodFactory te;
     private final EntityPlayer player;
 
     private int totalTime;
@@ -20,14 +20,14 @@ public class ContainerFactoryTest extends BaseContainer<TileFactory>{
     private int energyGUI;
     private int fluidGUI;
 
-    public ContainerFactoryTest(EntityPlayer player, TileFactory te) {
+    public ContainerBloodFactory(EntityPlayer player, TileBloodFactory te) {
         super(te);
 
         this.te = te;
         this.player = player;
 
-        this.addSlotToContainer(new SlotInputTest(te, 0, 71, 36));
-        this.addSlotToContainer(new SlotOutoutTest(te, 1, 125, 36));
+        this.addSlotToContainer(new SlotInput(te, 0, 71, 36));
+        this.addSlotToContainer(new SlotOutput(te, 1, 125, 36));
 
         addInventoryPlayer(player, 8, 18, 84, 18, 8, 18, 142);
     }
