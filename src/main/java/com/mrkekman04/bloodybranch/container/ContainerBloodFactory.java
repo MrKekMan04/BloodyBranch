@@ -41,6 +41,7 @@ public class ContainerBloodFactory extends BaseContainer<TileBloodFactory>{
     @Override
     public void detectAndSendChanges() {
         super.detectAndSendChanges();
+        if (this.listeners.isEmpty()) return;
         for (IContainerListener iContainerListener : this.listeners) {
             if (totalTime != te.getField(0)) {
                 iContainerListener.sendWindowProperty(this, 0, te.getField(0));
@@ -54,8 +55,6 @@ public class ContainerBloodFactory extends BaseContainer<TileBloodFactory>{
             if (fluidGUI != te.getField(3)) {
                 iContainerListener.sendWindowProperty(this, 3, te.getField(3));
             }
-
-
             totalTime = te.getField(0);
             processTime = te.getField(1);
             energyGUI = te.getField(2);
