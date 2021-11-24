@@ -82,7 +82,7 @@ item.bottleblood_large.name=Большой пузырёк с кровью
 # ===: Блоки :=== #
 ###################
 
-tile.factory.name=Кровавый завод
+tile.blood_factory.name=Кровавый завод
 tile.factory.inventoryName=Кровавый завод
 
 
@@ -161,5 +161,5 @@ desc.bottleblood_large=§dПКМ по кровавому алтарю, чтоб�
 
 
 
-tip.factory.energy=Energy: %d / %d RF
-tip.factory.LPTank=LP: %d / %d
+tip.factory.energy=%d / %d RF
+tip.factory.LPTank=%d / %d LP
