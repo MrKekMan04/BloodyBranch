@@ -19,10 +19,7 @@ public class BloodFactoryCategory implements IRecipeCategory<BloodFactoryWrapper
     private final IDrawableStatic bg;
 
     private IDrawableAnimated progress;
-
     private IDrawableAnimated energyBar;
-    private IDrawableAnimated fluidBar;
-    private IDrawableAnimated fluid;
 
     RecipesFactory recipesFactory;
 
@@ -73,6 +70,5 @@ public class BloodFactoryCategory implements IRecipeCategory<BloodFactoryWrapper
     protected void animation(IGuiHelper handler) {
         progress = handler.drawableBuilder(new ResourceLocation(Reference.MOD_ID, "textures/gui/jei/jei_blood_factory.png"), 180, 0, 22, 16).buildAnimated(40, IDrawableAnimated.StartDirection.LEFT, false);
         energyBar = handler.drawableBuilder(new ResourceLocation(Reference.MOD_ID, "textures/gui/jei/jei_blood_factory.png"), 164, 0, 16, 58).buildAnimated(200, IDrawableAnimated.StartDirection.TOP, true);
-        fluidBar = handler.drawableBuilder(new ResourceLocation(Reference.MOD_ID, "textures/gui/jei/jei_blood_factory.png"), 148, 0, 16, 58).buildAnimated(320, IDrawableAnimated.StartDirection.TOP, true);
     }
 }
