@@ -1,6 +1,8 @@
 package com.mrkekman04.bloodybranch.main;
 
+import com.mrkekman04.bloodybranch.config.ConfigHandler;
 import com.mrkekman04.bloodybranch.init.InitTile;
+import com.mrkekman04.bloodybranch.integration.crafttweaker.CTHandler;
 import com.mrkekman04.bloodybranch.misc.CreativeTabBloodyBranch;
 import com.mrkekman04.bloodybranch.proxy.Proxy;
 import com.mrkekman04.bloodybranch.utils.handlers.RecipeHandler;
@@ -8,6 +10,7 @@ import com.mrkekman04.bloodybranch.reference.Reference;
 import com.mrkekman04.bloodybranch.utils.consoleMessage.ConsoleMsg;
 import com.mrkekman04.bloodybranch.utils.handlers.GuiHandler;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -29,15 +32,15 @@ public class Main {
     @SidedProxy(clientSide = Reference.CLIENT, serverSide = Reference.SERVER)
     public static Proxy proxy;
 
-    // CreativeTab
 
+    // CreativeTab
     public static final CreativeTabs BLOODY_BRANCH = new CreativeTabBloodyBranch("bloody_branch");
 
 
     @Mod.EventHandler
     public static void preInit(FMLPreInitializationEvent event) {
         InitTile.init();
-
+        ConfigHandler.load(event.getSuggestedConfigurationFile());
         proxy.preInit(event);
     };
 
@@ -51,6 +54,10 @@ public class Main {
 
     @Mod.EventHandler
     public static void postInit(FMLPostInitializationEvent event) {
+        if (Loader.isModLoaded("mtlib") && Loader.isModLoaded("crafttweaker")) {
+            CTHandler.postInit();
+        }
+
         proxy.postInit(event);
     };
 
