@@ -3,7 +3,6 @@ package com.mrkekman04.bloodybranch.recipes.factory;
 import com.mrkekman04.bloodybranch.init.InitItems;
 import com.mrkekman04.bloodybranch.utils.itemStackUtil.ItemStackHashingStrategy;
 import gnu.trove.map.hash.TCustomHashMap;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 import java.util.ArrayList;
@@ -15,21 +14,27 @@ public class RecipesFactoryHandler {
     public static final ArrayList<RecipesFactory> ALL_RECIPES = new ArrayList<>();
     public static final HashSet<ItemStack> ITEMS_VALID = new HashSet<>();
 
+    public static int[] CONTRACT_IRON_PARAMETER = new int[3];
+    public static int[] CONTRACT_GOLD_PARAMETER = new int[3];
+    public static int[] CONTRACT_COPPER_PARAMETER = new int[3];
+    public static int[] CONTRACT_TIN_PARAMETER = new int[3];
+    public static int[] CONTRACT_LEAD_PARAMETER = new int[3];
+    public static int[] CONTRACT_NICKEL_PARAMETER = new int[3];
+    public static int[] CONTRACT_SILVER_PARAMETER = new int[3];
+    public static int[] CONTRACT_ALUMINIUM_PARAMETER = new int[3];
+    public static int[] CONTRACT_PLATINUM_PARAMETER = new int[3];
+
     public static void initRecipes() {
         RECIPES.clear();
-        addRecipe(new ItemStack(Items.APPLE), new ItemStack(Items.ARROW), 20, 5, 0);
-        addRecipe(new ItemStack(Items.BONE), new ItemStack(Items.BLAZE_ROD), 40, 0, 5);
-        addRecipe(new ItemStack(InitItems.CONTRACT_IRON), new ItemStack(InitItems.MATRIX, 1, 1), 10, 0, 0);
-        addRecipe(new ItemStack(InitItems.CONTRACT_GOLD), new ItemStack(InitItems.MATRIX, 1, 2), 10, 0, 0);
-        addRecipe(new ItemStack(InitItems.CONTRACT_COPPER), new ItemStack(InitItems.MATRIX, 1, 3), 10, 0, 0);
-        addRecipe(new ItemStack(InitItems.CONTRACT_TIN), new ItemStack(InitItems.MATRIX, 1, 4), 10, 0, 0);
-        addRecipe(new ItemStack(InitItems.CONTRACT_LEAD), new ItemStack(InitItems.MATRIX, 1, 5), 10, 0, 0);
-        addRecipe(new ItemStack(InitItems.CONTRACT_NICKEL), new ItemStack(InitItems.MATRIX, 1, 6), 10, 0, 0);
-        addRecipe(new ItemStack(InitItems.CONTRACT_SILVER), new ItemStack(InitItems.MATRIX, 1, 7), 10, 0, 0);
-        addRecipe(new ItemStack(InitItems.CONTRACT_ALUMINIUM), new ItemStack(InitItems.MATRIX, 1, 8), 10, 0, 0);
-        addRecipe(new ItemStack(InitItems.CONTRACT_PLATINUM), new ItemStack(InitItems.MATRIX, 1, 9), 10, 0, 0);
-
-
+        addRecipe(new ItemStack(InitItems.CONTRACT_IRON), new ItemStack(InitItems.MATRIX, 1, 1), CONTRACT_IRON_PARAMETER[0], CONTRACT_IRON_PARAMETER[1], CONTRACT_IRON_PARAMETER[2]);
+        addRecipe(new ItemStack(InitItems.CONTRACT_GOLD), new ItemStack(InitItems.MATRIX, 1, 2), CONTRACT_GOLD_PARAMETER[0], CONTRACT_GOLD_PARAMETER[1], CONTRACT_GOLD_PARAMETER[2]);
+        addRecipe(new ItemStack(InitItems.CONTRACT_COPPER), new ItemStack(InitItems.MATRIX, 1, 3), CONTRACT_COPPER_PARAMETER[0], CONTRACT_COPPER_PARAMETER[1], CONTRACT_COPPER_PARAMETER[2]);
+        addRecipe(new ItemStack(InitItems.CONTRACT_TIN), new ItemStack(InitItems.MATRIX, 1, 4), CONTRACT_TIN_PARAMETER[0], CONTRACT_TIN_PARAMETER[1], CONTRACT_TIN_PARAMETER[2]);
+        addRecipe(new ItemStack(InitItems.CONTRACT_LEAD), new ItemStack(InitItems.MATRIX, 1, 5), CONTRACT_LEAD_PARAMETER[0], CONTRACT_LEAD_PARAMETER[1], CONTRACT_LEAD_PARAMETER[2]);
+        addRecipe(new ItemStack(InitItems.CONTRACT_NICKEL), new ItemStack(InitItems.MATRIX, 1, 6), CONTRACT_NICKEL_PARAMETER[0], CONTRACT_NICKEL_PARAMETER[1], CONTRACT_NICKEL_PARAMETER[2]);
+        addRecipe(new ItemStack(InitItems.CONTRACT_SILVER), new ItemStack(InitItems.MATRIX, 1, 7), CONTRACT_SILVER_PARAMETER[0], CONTRACT_SILVER_PARAMETER[1], CONTRACT_SILVER_PARAMETER[2]);
+        addRecipe(new ItemStack(InitItems.CONTRACT_ALUMINIUM), new ItemStack(InitItems.MATRIX, 1, 8), CONTRACT_ALUMINIUM_PARAMETER[0], CONTRACT_ALUMINIUM_PARAMETER[1], CONTRACT_ALUMINIUM_PARAMETER[2]);
+        addRecipe(new ItemStack(InitItems.CONTRACT_PLATINUM), new ItemStack(InitItems.MATRIX, 1, 9), CONTRACT_PLATINUM_PARAMETER[0], CONTRACT_PLATINUM_PARAMETER[1], CONTRACT_PLATINUM_PARAMETER[2]);
     }
 
     public static RecipesFactory getRecipe(ItemStack input) {
