@@ -160,6 +160,12 @@ desc.bottleblood_medium=§dПКМ по кровавому алтарю, чтоб
 desc.bottleblood_large=§dПКМ по кровавому алтарю, чтобы наполнить его на §65000 §dLP
 
 
+category.blood_factory.name=Кровавый завод
+category.blood_factory.tip1=Время: %d
+category.blood_factory.tip2=%d RF
+category.blood_factory.tip3=%d LP
+
+
 
 tip.factory.energy=%d / %d RF
 tip.factory.LPTank=%d / %d LP

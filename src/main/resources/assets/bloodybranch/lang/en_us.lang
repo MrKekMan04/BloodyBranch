@@ -160,6 +160,12 @@ desc.bottleblood_medium=§dRight click to fill blood altar with §63000 §dLP
 desc.bottleblood_large=§dRight click to fill blood altar with §65000 §dLP
 
 
+category.blood_factory.name=Blood Factory
+category.blood_factory.tip1=Time: %d
+category.blood_factory.tip2=%d RF
+category.blood_factory.tip3=%d LP
+
+
 
 tip.factory.energy=%d / %d RF
 tip.factory.LPTank=%d / %d LP
