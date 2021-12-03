@@ -17,6 +17,7 @@ public class BloodFactoryCategory implements IRecipeCategory<BloodFactoryWrapper
 
     public static final String UID = Reference.MOD_ID + ":BloodFactory";
     private final IDrawableStatic bg;
+    private final IDrawableStatic fluidBar;
 
     private IDrawableAnimated progress;
     private IDrawableAnimated energyBar;
@@ -26,6 +27,7 @@ public class BloodFactoryCategory implements IRecipeCategory<BloodFactoryWrapper
     public BloodFactoryCategory(IGuiHelper h) {
         animation(h);
         bg = h.createDrawable(new ResourceLocation(Reference.MOD_ID, "textures/gui/jei/jei_blood_factory.png"), 0, 0, 148, 70);
+        fluidBar = h.createDrawable(new ResourceLocation(Reference.MOD_ID, "textures/gui/jei/jei_blood_factory.png"), 148, 0, 16, 58);
     }
 
     @Override
@@ -63,7 +65,7 @@ public class BloodFactoryCategory implements IRecipeCategory<BloodFactoryWrapper
         isg.init(1, false, 109, 27);
         isg.set(1, recipe.getRecipe().getOutputResource());
         IGuiFluidStackGroup fluidStacks = recipeLayout.getFluidStacks();
-        fluidStacks.init(2, false, 24, 6, 16, 58, 10000, false, null);
+        fluidStacks.init(2, false, 24, 6, 16, 58, 10000, false, fluidBar);
         fluidStacks.set(2, new FluidStack(BlockLifeEssence.getLifeEssence(), recipe.getRecipe().getFluidPerTick() * recipe.getRecipe().getTime()));
     }
 
