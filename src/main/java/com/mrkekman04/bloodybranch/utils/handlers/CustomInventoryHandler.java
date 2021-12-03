@@ -52,7 +52,7 @@ public class CustomInventoryHandler implements IItemHandlerModifiable {
         if (stack.isEmpty() || !canInsert(slot)) return stack;
         stack = stack.copy();
 
-        if(!inventory.isItemValidForSlot(slot+offset, stack)) return stack;
+        if (!inventory.isItemValidForSlot(slot+offset, stack)) return stack;
 
         int realSlot = slot+offset;
         ItemStack current = inventory.getInventory().get(realSlot);
@@ -60,9 +60,9 @@ public class CustomInventoryHandler implements IItemHandlerModifiable {
         if (current.isEmpty())
         {
             int accepted = Math.min(stack.getMaxStackSize(), getSlotLimit(slot));
-            if(accepted < stack.getCount())
+            if (accepted < stack.getCount())
             {
-                if(!simulate)
+                if (!simulate)
                 {
                     inventory.getInventory().set(realSlot, stack.splitStack(accepted));
                     inventory.updateGraphics(realSlot);
@@ -76,7 +76,7 @@ public class CustomInventoryHandler implements IItemHandlerModifiable {
             }
             else
             {
-                if(!simulate)
+                if (!simulate)
                 {
                     inventory.getInventory().set(realSlot, stack);
                     inventory.updateGraphics(realSlot);
@@ -86,13 +86,13 @@ public class CustomInventoryHandler implements IItemHandlerModifiable {
         }
         else
         {
-            if(!ItemHandlerHelper.canItemStacksStack(stack, current))
+            if (!ItemHandlerHelper.canItemStacksStack(stack, current))
                 return stack;
 
             int accepted = Math.min(stack.getMaxStackSize(), getSlotLimit(slot)) - current.getCount();
-            if(accepted < stack.getCount())
+            if (accepted < stack.getCount())
             {
-                if(!simulate)
+                if (!simulate)
                 {
                     ItemStack newStack = stack.splitStack(accepted);
                     newStack.grow(current.getCount());
@@ -108,7 +108,7 @@ public class CustomInventoryHandler implements IItemHandlerModifiable {
             }
             else
             {
-                if(!simulate)
+                if (!simulate)
                 {
                     ItemStack newStack = stack.copy();
                     newStack.grow(current.getCount());
@@ -138,9 +138,9 @@ public class CustomInventoryHandler implements IItemHandlerModifiable {
         ItemStack copy = stack.copy();
         copy.setCount(extracted);
 
-        if(!simulate)
+        if (!simulate)
         {
-            if(extracted < stack.getCount()) stack.shrink(extracted);
+            if (extracted < stack.getCount()) stack.shrink(extracted);
             else stack = ItemStack.EMPTY;
             inventory.getInventory().set(realSlot, stack);
             inventory.updateGraphics(realSlot);
