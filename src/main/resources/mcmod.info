@@ -2,7 +2,7 @@
 {
   "modid": "bloodybranch",
   "name": "Bloody Branch",
-  "description": "Mod for Bloody Sky 1.12.2 Borealis.su",
+  "description": "Mod for Bloody Sky 1.12.2",
   "version": "1.12.2-1.7.6",
   "mcversion": "1.12.2",
   "url": "https://github.com/MrKekMan04",
@@ -10,7 +10,7 @@
   "authorList": [
     "MrKekMan04"
   ],
-  "credits": "Borealis.su, Shum",
+  "credits": "Shum",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
