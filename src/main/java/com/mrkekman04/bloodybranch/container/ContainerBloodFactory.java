@@ -55,11 +55,11 @@ public class ContainerBloodFactory extends BaseContainer<TileBloodFactory>{
             if (fluidGUI != te.getField(3)) {
                 iContainerListener.sendWindowProperty(this, 3, te.getField(3));
             }
-            totalTime = te.getField(0);
-            processTime = te.getField(1);
-            energyGUI = te.getField(2);
-            fluidGUI = te.getField(3);
         }
+        totalTime = te.getField(0);
+        processTime = te.getField(1);
+        energyGUI = te.getField(2);
+        fluidGUI = te.getField(3);
     }
 
 
