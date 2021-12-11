@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "active=true": {
+      "model": "bloodybranch:bloody_altar_active"
+    },
+    "active=false": {
+      "model": "bloodybranch:bloody_altar"
+    }
+  }
+}

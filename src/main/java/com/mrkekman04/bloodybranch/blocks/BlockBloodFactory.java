@@ -130,16 +130,18 @@ public class BlockBloodFactory extends BaseBlockHasTileEntity {
 
     @Override
     public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
-        if (worldIn.isRemote) return;
-        TileEntity tileEntity = worldIn.getTileEntity(pos);
-        if (tileEntity instanceof TileBloodFactory) {
-            TileBloodFactory tile = (TileBloodFactory) tileEntity;
-            for (ItemStack item : tile.getInventory()) {
-                if (!item.isEmpty()) {
-                    InventoryHelper.spawnItemStack(worldIn, pos.getX(), pos.getY(), pos.getZ(), item);
+        if (!worldIn.isRemote) {
+            TileEntity tileEntity = worldIn.getTileEntity(pos);
+            if (tileEntity instanceof TileBloodFactory) {
+                TileBloodFactory tile = (TileBloodFactory) tileEntity;
+                for (ItemStack item : tile.getInventory()) {
+                    if (!item.isEmpty()) {
+                        InventoryHelper.spawnItemStack(worldIn, pos.getX(), pos.getY(), pos.getZ(), item);
+                    }
                 }
             }
         }
+        super.breakBlock(worldIn, pos, state);
     }
 
     @Override

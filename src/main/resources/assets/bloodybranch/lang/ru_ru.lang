@@ -84,7 +84,10 @@ item.bottleblood_large.name=Большой пузырёк с кровью
 
 tile.blood_factory.name=Кровавый завод
 tile.factory.inventoryName=Кровавый завод
-
+tile.bloody_fountain.name=Кровавый фонтан
+tile.advanced_bloody_fountain.name=Улучшенный кровавый фонтан
+tile.bloody_altar.name=Кровавый алтарь
+tile.advanced_bloody_altar.name=Улучшенный кровавый алтарь
 
 ######################
 # ===: Описания :=== #

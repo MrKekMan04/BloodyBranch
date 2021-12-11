@@ -77,13 +77,16 @@ item.bottleblood_lesser.name=Lesser Bottle Of Blood
 item.bottleblood_medium.name=Medium Bottle Of Blood
 item.bottleblood_large.name=Large Bottle Of Blood
 
-
 ####################
 # ===: Blocks :=== #
 ####################
 
 tile.blood_factory.name=Blood Factory
 tile.factory.inventoryName=Blood Factory
+tile.bloody_fountain.name=Blood Fountain
+tile.advanced_bloody_fountain.name=Advanced Blood Fountain
+tile.bloody_altar.name=Blood Altar
+tile.advanced_bloody_altar.name=Advanced Bloody Altar
 
 
 #########################
