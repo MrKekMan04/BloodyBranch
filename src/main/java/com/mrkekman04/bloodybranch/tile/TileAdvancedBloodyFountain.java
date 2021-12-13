@@ -2,11 +2,11 @@ package com.mrkekman04.bloodybranch.tile;
 
 public class TileAdvancedBloodyFountain extends TileBloodyFountain {
 
-    public static int AdvancedBloodyFountainAmountFill;
-    public static int AdvancedBloodyFountainTimeFill;
+    public static int ADVANCED_BLOODY_FOUNTAIN_AMOUNT_FILL;
+    public static int ADVANCED_BLOODY_FOUNTAIN_TIME_FILL;
 
     public TileAdvancedBloodyFountain() {
-        amountFill = AdvancedBloodyFountainAmountFill;
-        timeFill = AdvancedBloodyFountainTimeFill;
+        amountFill = ADVANCED_BLOODY_FOUNTAIN_AMOUNT_FILL;
+        timeFill = ADVANCED_BLOODY_FOUNTAIN_TIME_FILL;
     }
 }

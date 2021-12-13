@@ -10,6 +10,9 @@ public class RenderBloodyAltar extends TileEntitySpecialRenderer<TileBloodyAltar
 
     @Override
     public void render(TileBloodyAltar te, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
+        if (te.getItemOrb().isEmpty()) {
+            return;
+        }
         Minecraft mc = Minecraft.getMinecraft();
         GlStateManager.pushMatrix();
         GlStateManager.translate(x + 0.5, y + 0.35, z + 0.5);

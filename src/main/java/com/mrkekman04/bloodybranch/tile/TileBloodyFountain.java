@@ -7,20 +7,17 @@ import net.minecraft.util.math.BlockPos;
 
 public class TileBloodyFountain extends TileEntity implements ITickable {
 
-    public static int BloodyFountainAmountFill;
-    public static int BloodyFountainTimeFill;
+    public static int BLOODY_FOUNTAIN_AMOUNT_FILL;
+    public static int BLOODY_FOUNTAIN_TIME_FILL;
 
     protected BlockPos altarPos = BlockPos.ORIGIN;
-    protected TileAltar tileAltar;
-    protected boolean hasAltar;
-    protected long lastCheck;
     protected long lastFill;
     protected int amountFill;
     protected int timeFill;
 
     public TileBloodyFountain() {
-        amountFill = BloodyFountainAmountFill;
-        timeFill = BloodyFountainTimeFill;
+        amountFill = BLOODY_FOUNTAIN_AMOUNT_FILL;
+        timeFill = BLOODY_FOUNTAIN_TIME_FILL;
     }
 
     @Override
@@ -29,36 +26,23 @@ public class TileBloodyFountain extends TileEntity implements ITickable {
             return;
         }
         long totalWorldTime = world.getTotalWorldTime();
-        if (!hasAltar) {
-            if (totalWorldTime - lastCheck >= 100) {
-                altarSearch();
-                lastCheck = totalWorldTime;
+        if (totalWorldTime - lastFill >= timeFill) {
+            TileAltar tileAltar = getTileAltar();
+            if (tileAltar == null) {
+                return;
             }
-        }
-        if (hasAltar) {
-            if (totalWorldTime - lastFill >= timeFill) {
-                tileAltar.fillMainTank(amountFill);
-                lastFill = totalWorldTime;
-            }
+            tileAltar.fillMainTank(amountFill);
+            lastFill = totalWorldTime;
         }
     }
 
-    private void altarSearch() {
-        BlockPos altarPos = pos.down();
-        TileEntity tileEntity = world.getTileEntity(altarPos);
-        if (tileEntity instanceof TileAltar) {
-            tileAltar = (TileAltar) tileEntity;
-            this.altarPos = tileAltar.getPos();
-            hasAltar = true;
-        }
+    public TileAltar getTileAltar() {
+        TileEntity tileEntity = world.getTileEntity(pos.down());
+        if (tileEntity instanceof TileAltar) return ((TileAltar) tileEntity);
+        return null;
     }
-
 
     public BlockPos getAltarPos() {
         return altarPos;
-    }
-
-    public void setHasAltar(boolean hasAltar) {
-        this.hasAltar = hasAltar;
     }
 }

@@ -28,12 +28,11 @@ import static com.mrkekman04.bloodybranch.blocks.BlockBloodyAltar.ACTIVE;
 
 public class TileBloodyAltar extends TileEntity implements ITickable {
 
-    public static int bloodyAltarMaxCapacity;
-    public static int bloodyAltarAmountFill;
-    public static int bloodyAltarTimeFill;
+    public static int BLOODY_ALTAR_MAX_CAPACITY;
+    public static int BLOODY_ALTAR_AMOUNT_FILL;
+    public static int BLOODY_ALTAR_TIME_FILL;
 
     protected final ItemStackHandler inventory = new ItemStackHandler(1);
-    protected EntityPlayer player;
     protected UUID uuid;
     protected SoulNetwork soulNetwork;
     protected BloodOrb orb;
@@ -47,9 +46,9 @@ public class TileBloodyAltar extends TileEntity implements ITickable {
     protected int timeFill;
 
     public TileBloodyAltar() {
-        maxCapacity = bloodyAltarMaxCapacity;
-        amountFill = bloodyAltarAmountFill;
-        timeFill = bloodyAltarTimeFill;
+        maxCapacity = BLOODY_ALTAR_MAX_CAPACITY;
+        amountFill = BLOODY_ALTAR_AMOUNT_FILL;
+        timeFill = BLOODY_ALTAR_TIME_FILL;
     }
 
     @Override
@@ -153,12 +152,10 @@ public class TileBloodyAltar extends TileEntity implements ITickable {
             if (entityPlayer instanceof EntityPlayerMP) {
                 EntityPlayerMP entityPlayerMP = (EntityPlayerMP) entityPlayer;
                 if (BloodyAltarUtil.addBlock(entityPlayerMP, pos)) {
-                    player = entityPlayerMP;
                     valid = true;
                     return;
                 }
             }
-            player = null;
             valid = false;
         }
     }
@@ -166,7 +163,6 @@ public class TileBloodyAltar extends TileEntity implements ITickable {
     private void reset() {
         orb = null;
         soulNetwork = null;
-        player = null;
         uuid = null;
         valid = false;
         dirty = true;

@@ -1,7 +1,6 @@
 package com.mrkekman04.bloodybranch.blocks;
 
 import com.mrkekman04.bloodybranch.tile.TileBloodyFountain;
-import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -24,24 +23,6 @@ public class BlockBloodyFountain extends BaseBlockHasTileEntity {
     @Override
     public TileEntity createTileEntity(World world, IBlockState state) {
         return new TileBloodyFountain();
-    }
-
-    @Override
-    public void neighborChanged(IBlockState state, World world, BlockPos pos, Block blockIn, BlockPos fromPos) {
-        if (world.isRemote) {
-            return;
-        }
-        TileEntity tileEntityMain = world.getTileEntity(pos);
-        if (tileEntityMain instanceof TileBloodyFountain) {
-            TileBloodyFountain tileBloodyFountain = (TileBloodyFountain) tileEntityMain;
-            if (!tileBloodyFountain.getAltarPos().equals(fromPos)) {
-                return;
-            }
-            TileEntity tileEntityFrom = world.getTileEntity(fromPos);
-            if (tileEntityFrom == null) {
-                tileBloodyFountain.setHasAltar(false);
-            }
-        }
     }
 
     @Override
