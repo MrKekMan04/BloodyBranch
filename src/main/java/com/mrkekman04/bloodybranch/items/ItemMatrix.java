@@ -26,10 +26,8 @@ public class ItemMatrix extends BaseItemSubtypes {
     @Override
     public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> items) {
         if (isInCreativeTab(tab)) {
-            if (tab == Main.BLOODY_BRANCH) {
-                for (EnumMatrix type : EnumMatrix.values()) {
-                    items.add(new ItemStack(this, 1, type.ordinal()));
-                }
+            for (EnumMatrix type : EnumMatrix.values()) {
+                items.add(new ItemStack(this, 1, type.ordinal()));
             }
         }
     }

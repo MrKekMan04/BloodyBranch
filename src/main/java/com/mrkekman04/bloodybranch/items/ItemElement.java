@@ -10,30 +10,22 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 
-public class ItemElement extends Item {
+public class ItemElement extends BaseItemSubtypes {
 
-    public ItemElement (String name) {
-        ResourceLocation RS = new ResourceLocation(Reference.MOD_ID, name);
-        setMaxDamage(0);
-        setHasSubtypes(true);
-        setCreativeTab(Main.BLOODY_BRANCH);
-        setRegistryName(RS);
-        setUnlocalizedName(name);
-        InitItems.ITEMS.add(this);
+    public ItemElement(String name) {
+        super(name);
     }
 
     @Override
     public String getUnlocalizedName(ItemStack stack) {
-        return this.getUnlocalizedName()  + "_of_" +  EnumElement.values()[stack.getItemDamage()].name().toLowerCase();
+        return this.getUnlocalizedName() + "_of_" + EnumElement.values()[stack.getItemDamage()].name().toLowerCase();
     }
 
     @Override
     public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> items) {
         if (isInCreativeTab(tab)) {
-            if (tab == Main.BLOODY_BRANCH) {
-                for (EnumElement type : EnumElement.values()) {
-                    items.add(new ItemStack(this, 1, type.ordinal()));
-                }
+            for (EnumElement type : EnumElement.values()) {
+                items.add(new ItemStack(this, 1, type.ordinal()));
             }
         }
     }

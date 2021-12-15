@@ -27,10 +27,8 @@ public class ItemSpawnStone extends BaseItemSubtypes {
     @Override
     public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> items) {
         if (isInCreativeTab(tab)) {
-            if (tab == Main.BLOODY_BRANCH) {
-                for (EnumSpawnStone type : EnumSpawnStone.values()) {
-                    items.add(new ItemStack(this, 1, type.ordinal()));
-                }
+            for (EnumSpawnStone type : EnumSpawnStone.values()) {
+                items.add(new ItemStack(this, 1, type.ordinal()));
             }
         }
     }

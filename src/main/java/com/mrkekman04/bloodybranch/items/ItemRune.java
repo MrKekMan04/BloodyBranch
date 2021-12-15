@@ -20,10 +20,8 @@ public class ItemRune extends BaseItemSubtypes {
     @Override
     public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> items) {
         if (isInCreativeTab(tab)) {
-            if (tab == Main.BLOODY_BRANCH) {
-                for (EnumRune type : EnumRune.values()) {
-                    items.add(new ItemStack(this, 1, type.ordinal()));
-                }
+            for (EnumRune type : EnumRune.values()) {
+                items.add(new ItemStack(this, 1, type.ordinal()));
             }
         }
     }

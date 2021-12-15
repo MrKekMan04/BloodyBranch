@@ -15,6 +15,8 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -63,13 +65,12 @@ public class ItemBottleBlood extends BaseItemSubtypes {
     @Override
     public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> items) {
         if (isInCreativeTab(tab)) {
-            if (tab == Main.BLOODY_BRANCH) {
-                for (EnumBottleBlood type : EnumBottleBlood.values()) {
-                    items.add(new ItemStack(this, 1, type.ordinal()));
-                }
+            for (EnumBottleBlood type : EnumBottleBlood.values()) {
+                items.add(new ItemStack(this, 1, type.ordinal()));
             }
         }
     }
+
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
