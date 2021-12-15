@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "s  ",
+    "s  ",
+    "pss"
+  ],
+  "key": {
+    "p": {
+      "type": "forge:ore_dict",
+      "ore": "plankWood"
+    },
+    "s": {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    }
+  },
+  "result": {
+    "item": "bloodybranch:wooden_shear",
+    "data": 0,
+    "count": 1
+  }
+}

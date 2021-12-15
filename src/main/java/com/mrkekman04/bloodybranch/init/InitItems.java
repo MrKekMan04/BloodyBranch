@@ -41,4 +41,7 @@ public class InitItems
     public static final Item BOTTLE_BLOOD = new ItemBottleBlood("bottleblood");
 
 
+    public static final Item WOODEN_SHEAR = new ItemWoodShear("wooden_shear");
+
+
 }

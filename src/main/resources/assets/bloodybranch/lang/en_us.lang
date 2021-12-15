@@ -76,6 +76,7 @@ item.spawnstone_parrot.name=Scroll Of Summon: Parrot
 item.bottleblood_lesser.name=Lesser Bottle Of Blood
 item.bottleblood_medium.name=Medium Bottle Of Blood
 item.bottleblood_large.name=Large Bottle Of Blood
+item.wooden_shear.name=Wooden shear
 
 ####################
 # ===: Blocks :=== #
