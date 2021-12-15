@@ -59,10 +59,5 @@ public class Main {
         }
 
         proxy.postInit(event);
-    };
-
-    @Mod.EventHandler
-    public void loadComplete(FMLLoadCompleteEvent event) {
-        ConsoleMsg.ModName();
     }
 }
