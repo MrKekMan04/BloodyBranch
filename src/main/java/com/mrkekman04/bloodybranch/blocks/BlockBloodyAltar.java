@@ -7,6 +7,8 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.resources.I18n;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
@@ -20,6 +22,8 @@ import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class BlockBloodyAltar extends BaseBlockHasTileEntity {
     public static PropertyBool ACTIVE = PropertyBool.create("active");
@@ -119,5 +123,12 @@ public class BlockBloodyAltar extends BaseBlockHasTileEntity {
     @Override
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
         return new AxisAlignedBB(0, 0, 0, 1, 0.9, 1);
+    }
+
+    @Override
+    public void addInformation(ItemStack stack, @Nullable World player, List<String> tooltip, ITooltipFlag advanced) {
+        tooltip.add(I18n.format("desc.bloody_altar.1"));
+        tooltip.add(I18n.format("desc.bloody_altar.2", TileBloodyAltar.BLOODY_ALTAR_MAX_CAPACITY));
+        tooltip.add(I18n.format("desc.bloody_altar.3", TileBloodyAltar.BLOODY_ALTAR_AMOUNT_FILL, TileBloodyAltar.BLOODY_ALTAR_TIME_FILL / 20));
     }
 }

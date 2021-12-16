@@ -162,6 +162,12 @@ desc.spawnstone_parrot=§dPlace in the barrel with §blife essence§d, to summon
 desc.bottleblood_lesser=§dRight click to fill blood altar with §61000 §dLP
 desc.bottleblood_medium=§dRight click to fill blood altar with §63000 §dLP
 desc.bottleblood_large=§dRight click to fill blood altar with §65000 §dLP
+desc.bloody_fountain.1=§dTo work block, install it on the Bloody Altar
+desc.bloody_fountain.2=§dProduces §6%d §din life essence once per §6%d §dsec
+desc.bloody_altar.1=§dTo work the block, install it in the world and put a tied blood orb in it
+desc.bloody_altar.2=§dFills the orb up to §6%d §dLP as much as possible
+desc.bloody_altar.3=§dProduces §6%d §dLP once per §6%d §dsec
+desc.donate=§eYou can buy it in the donat store
 
 
 category.blood_factory.name=Blood Factory
