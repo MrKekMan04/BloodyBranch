@@ -18,7 +18,7 @@ import java.util.List;
 
 public class BlockBloodyFountain extends BaseBlockHasTileEntity {
     public BlockBloodyFountain(String name) {
-        super(name, Material.IRON);
+        super(name, Material.ROCK);
         setHardness(2.0F);
         setHarvestLevel("pickaxe", 1);
         setSoundType(SoundType.METAL);

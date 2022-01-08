@@ -1,0 +1,3 @@
+include:
+  - project: 'shared/ci-templates'
+    file: 'gradle/minecraft/1.12.2-fg3.yml'

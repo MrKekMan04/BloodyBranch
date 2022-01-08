@@ -29,7 +29,7 @@ public class BlockBloodyAltar extends BaseBlockHasTileEntity {
     public static PropertyBool ACTIVE = PropertyBool.create("active");
 
     public BlockBloodyAltar(String name) {
-        super(name, Material.IRON);
+        super(name, Material.ROCK);
         setHardness(2.0F);
         setHarvestLevel("pickaxe", 1);
         setSoundType(SoundType.METAL);

@@ -83,11 +83,17 @@ public class TileBloodyAltar extends TileEntity implements ITickable {
         }
         long worldTime = world.getTotalWorldTime();
         if (!valid) {
-            if (worldTime - lastCheck >= 100) {
-                validation();
-                lastCheck = worldTime;
+            if (worldTime - lastCheck < 100) {
+                return;
             }
+            validation();
+            lastCheck = worldTime;
+
             if (!valid) {
+                IBlockState state = world.getBlockState(pos);
+                if (state.getValue(ACTIVE)) {
+                    world.setBlockState(pos, world.getBlockState(pos).withProperty(ACTIVE, false));
+                }
                 return;
             }
             IBlockState blockState = world.getBlockState(pos);
@@ -133,13 +139,6 @@ public class TileBloodyAltar extends TileEntity implements ITickable {
     public void readFromNBT(NBTTagCompound compound) {
         inventory.deserializeNBT(compound.getCompoundTag("inventory"));
         super.readFromNBT(compound);
-    }
-
-    @Override
-    public void onLoad() {
-        super.onLoad();
-        world.setBlockState(pos, world.getBlockState(pos).withProperty(ACTIVE, false));
-        validation();
     }
 
     private void validation() {

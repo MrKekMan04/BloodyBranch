@@ -11,11 +11,15 @@ public class BloodyAltarUtil {
     private static HashMap<UUID, BlockPos> blocks = new HashMap<>();
 
     public static boolean addBlock(EntityPlayerMP player, BlockPos pos) {
-        if (!hasPlayer(player)) {
-            blocks.put(player.getUniqueID(), pos);
+        UUID uuid = player.getUniqueID();
+
+        BlockPos workingBlock = blocks.get(uuid);
+        if (workingBlock == null) {
+            blocks.put(uuid, pos);
             return true;
         }
-        return false;
+
+        return workingBlock.equals(pos);
     }
 
     public static void removeBlock(UUID uuid, BlockPos pos) {
