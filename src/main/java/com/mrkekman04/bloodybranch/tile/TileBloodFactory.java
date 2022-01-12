@@ -4,7 +4,7 @@ import WayofTime.bloodmagic.block.BlockLifeEssence;
 import com.mrkekman04.bloodybranch.blocks.BlockBloodFactory;
 import com.mrkekman04.bloodybranch.core.helper.RecipeHelper;
 import com.mrkekman04.bloodybranch.energy.CustomEnergyStorage;
-import com.mrkekman04.bloodybranch.items.ItemMatrix;
+import com.mrkekman04.bloodybranch.items.contract.ItemContract;
 import com.mrkekman04.bloodybranch.recipes.factory.RecipesFactory;
 import com.mrkekman04.bloodybranch.recipes.factory.RecipesFactoryHandler;
 import com.mrkekman04.bloodybranch.utils.fluidutil.CustomFluidTank;
@@ -211,7 +211,7 @@ public class TileBloodFactory extends TileMachineInventory implements ITickable 
 
                             if (processTime >= totalTime) {
 
-                                if (!(activeRecipe.getOutputResource().getItem() instanceof ItemMatrix)) {
+                                if (!(activeRecipe.getInput().getItem() instanceof ItemContract)) {
                                     inventory.get(0).shrink(activeRecipe.getInput().getCount());
                                 }
 
