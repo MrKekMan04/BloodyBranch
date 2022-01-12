@@ -17,6 +17,6 @@ public class ItemContractIron extends ItemContract {
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
         tooltip.add(I18n.format("desc.iron_contract1"));
-        tooltip.add(I18n.format("desc.iron_contract2"));
+        tooltip.add(I18n.format("desc.iron_contract2", getMaxDamage(stack) + 1 - getDamage(stack)));
     }
 }
