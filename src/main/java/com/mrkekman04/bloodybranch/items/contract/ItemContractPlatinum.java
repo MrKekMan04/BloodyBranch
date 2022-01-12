@@ -18,11 +18,6 @@ public class ItemContractPlatinum extends ItemContract {
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
         tooltip.add(I18n.format("desc.platinum_contract1"));
-        tooltip.add(I18n.format("desc.platinum_contract2"));
-    }
-
-    @Override
-    public Item setMaxDamage(int maxDamageIn) {
-        return super.setMaxDamage(15);
+        tooltip.add(I18n.format("desc.platinum_contract2", getMaxDamage(stack) + 1 - getDamage(stack)));
     }
 }
