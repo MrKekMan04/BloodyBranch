@@ -1,5 +1,6 @@
 package com.mrkekman04.bloodybranch.integration.jei.wrapper;
 
+import com.mrkekman04.bloodybranch.items.contract.ItemContract;
 import com.mrkekman04.bloodybranch.recipes.factory.RecipesFactory;
 import mezz.jei.api.ingredients.IIngredients;
 import mezz.jei.api.ingredients.VanillaTypes;
@@ -29,6 +30,9 @@ public class BloodFactoryWrapper implements IRecipeWrapper {
     public void drawInfo(Minecraft minecraft, int recipeWidth, int recipeHeight, int mouseX, int mouseY) {
         if (recipe != null) {
             minecraft.fontRenderer.drawString(I18n.format("tile.factory.inventoryName"), 148 - (minecraft.fontRenderer.getStringWidth(I18n.format("tile.factory.inventoryName"))) - 8, 6, 16777215, true);
+            if (recipe.getInput().getItem() instanceof ItemContract) {
+                minecraft.fontRenderer.drawString(I18n.format("tile.factory.itemNotConsumed"), 152 - (minecraft.fontRenderer.getStringWidth(I18n.format("tile.factory.itemNotConsumed"))) - 8, 56, 12557851, true);
+            }
         }
     }
 
