@@ -30,7 +30,11 @@ public class ItemBottleBlood extends BaseItemSubtypes {
     @Override
     public EnumActionResult onItemUseFirst(EntityPlayer player, World world, BlockPos pos, EnumFacing side, float hitX, float hitY, float hitZ, EnumHand hand) {
         if (world.isRemote) {
-            return EnumActionResult.SUCCESS;
+            TileEntity tileEntity = world.getTileEntity(pos);
+            if (tileEntity instanceof TileAltar) {
+                return EnumActionResult.SUCCESS;
+            }
+            return EnumActionResult.FAIL;
         }
         TileEntity tileEntity = world.getTileEntity(pos);
         if (tileEntity instanceof TileAltar) {
