@@ -13,13 +13,15 @@ public class RecipesFactory {
     private final int time;
     private final int energyPerTick;
     private final int fluidPerTick;
+    private final boolean isConsume;
 
-    public RecipesFactory(ItemStack input1, ItemStack outputResource, int time, int energyPerTick, int fluidPerTick) {
+    public RecipesFactory(ItemStack input1, ItemStack outputResource, int time, int energyPerTick, int fluidPerTick, boolean isConsume) {
         this.input = input1;
         this.outputResource = outputResource;
         this.time = time;
         this.energyPerTick = energyPerTick;
         this.fluidPerTick = fluidPerTick;
+        this.isConsume = isConsume;
     }
 
 
@@ -42,6 +44,8 @@ public class RecipesFactory {
     public int getFluidPerTick() {
         return fluidPerTick;
     }
+
+    public boolean getIsConsume() {return isConsume;}
 
     public List<ItemStack> getOutputs() {
         ArrayList<ItemStack> list = new ArrayList<>();

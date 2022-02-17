@@ -211,7 +211,7 @@ public class TileBloodFactory extends TileMachineInventory implements ITickable 
 
                             if (processTime >= totalTime) {
 
-                                if (!(activeRecipe.getInput().getItem() instanceof ItemContract)) {
+                                if (activeRecipe.getIsConsume()) {
                                     inventory.get(0).shrink(activeRecipe.getInput().getCount());
                                 }
 

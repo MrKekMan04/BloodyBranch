@@ -30,7 +30,7 @@ public class BloodFactoryWrapper implements IRecipeWrapper {
     public void drawInfo(Minecraft minecraft, int recipeWidth, int recipeHeight, int mouseX, int mouseY) {
         if (recipe != null) {
             minecraft.fontRenderer.drawString(I18n.format("tile.factory.inventoryName"), 148 - (minecraft.fontRenderer.getStringWidth(I18n.format("tile.factory.inventoryName"))) - 8, 6, 16777215, true);
-            if (recipe.getInput().getItem() instanceof ItemContract) {
+            if (!(recipe.getIsConsume())) {
                 minecraft.fontRenderer.drawString(I18n.format("tile.factory.itemNotConsumed"), 152 - (minecraft.fontRenderer.getStringWidth(I18n.format("tile.factory.itemNotConsumed"))) - 8, 56, 12557851, true);
             }
         }

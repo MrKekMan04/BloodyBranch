@@ -26,29 +26,29 @@ public class RecipesFactoryHandler {
 
     public static void initRecipes() {
         RECIPES.clear();
-        addRecipe(new ItemStack(InitItems.CONTRACT_IRON), new ItemStack(InitItems.MATRIX, 1, 1), CONTRACT_IRON_PARAMETER[0], CONTRACT_IRON_PARAMETER[1], CONTRACT_IRON_PARAMETER[2]);
-        addRecipe(new ItemStack(InitItems.CONTRACT_GOLD), new ItemStack(InitItems.MATRIX, 1, 2), CONTRACT_GOLD_PARAMETER[0], CONTRACT_GOLD_PARAMETER[1], CONTRACT_GOLD_PARAMETER[2]);
-        addRecipe(new ItemStack(InitItems.CONTRACT_COPPER), new ItemStack(InitItems.MATRIX, 1, 3), CONTRACT_COPPER_PARAMETER[0], CONTRACT_COPPER_PARAMETER[1], CONTRACT_COPPER_PARAMETER[2]);
-        addRecipe(new ItemStack(InitItems.CONTRACT_TIN), new ItemStack(InitItems.MATRIX, 1, 4), CONTRACT_TIN_PARAMETER[0], CONTRACT_TIN_PARAMETER[1], CONTRACT_TIN_PARAMETER[2]);
-        addRecipe(new ItemStack(InitItems.CONTRACT_LEAD), new ItemStack(InitItems.MATRIX, 1, 5), CONTRACT_LEAD_PARAMETER[0], CONTRACT_LEAD_PARAMETER[1], CONTRACT_LEAD_PARAMETER[2]);
-        addRecipe(new ItemStack(InitItems.CONTRACT_NICKEL), new ItemStack(InitItems.MATRIX, 1, 6), CONTRACT_NICKEL_PARAMETER[0], CONTRACT_NICKEL_PARAMETER[1], CONTRACT_NICKEL_PARAMETER[2]);
-        addRecipe(new ItemStack(InitItems.CONTRACT_SILVER), new ItemStack(InitItems.MATRIX, 1, 7), CONTRACT_SILVER_PARAMETER[0], CONTRACT_SILVER_PARAMETER[1], CONTRACT_SILVER_PARAMETER[2]);
-        addRecipe(new ItemStack(InitItems.CONTRACT_ALUMINIUM), new ItemStack(InitItems.MATRIX, 1, 8), CONTRACT_ALUMINIUM_PARAMETER[0], CONTRACT_ALUMINIUM_PARAMETER[1], CONTRACT_ALUMINIUM_PARAMETER[2]);
-        addRecipe(new ItemStack(InitItems.CONTRACT_PLATINUM), new ItemStack(InitItems.MATRIX, 1, 9), CONTRACT_PLATINUM_PARAMETER[0], CONTRACT_PLATINUM_PARAMETER[1], CONTRACT_PLATINUM_PARAMETER[2]);
+        addRecipe(new ItemStack(InitItems.CONTRACT_IRON), new ItemStack(InitItems.MATRIX, 1, 1), CONTRACT_IRON_PARAMETER[0], CONTRACT_IRON_PARAMETER[1], CONTRACT_IRON_PARAMETER[2], false);
+        addRecipe(new ItemStack(InitItems.CONTRACT_GOLD), new ItemStack(InitItems.MATRIX, 1, 2), CONTRACT_GOLD_PARAMETER[0], CONTRACT_GOLD_PARAMETER[1], CONTRACT_GOLD_PARAMETER[2], false);
+        addRecipe(new ItemStack(InitItems.CONTRACT_COPPER), new ItemStack(InitItems.MATRIX, 1, 3), CONTRACT_COPPER_PARAMETER[0], CONTRACT_COPPER_PARAMETER[1], CONTRACT_COPPER_PARAMETER[2], false);
+        addRecipe(new ItemStack(InitItems.CONTRACT_TIN), new ItemStack(InitItems.MATRIX, 1, 4), CONTRACT_TIN_PARAMETER[0], CONTRACT_TIN_PARAMETER[1], CONTRACT_TIN_PARAMETER[2], false);
+        addRecipe(new ItemStack(InitItems.CONTRACT_LEAD), new ItemStack(InitItems.MATRIX, 1, 5), CONTRACT_LEAD_PARAMETER[0], CONTRACT_LEAD_PARAMETER[1], CONTRACT_LEAD_PARAMETER[2], false);
+        addRecipe(new ItemStack(InitItems.CONTRACT_NICKEL), new ItemStack(InitItems.MATRIX, 1, 6), CONTRACT_NICKEL_PARAMETER[0], CONTRACT_NICKEL_PARAMETER[1], CONTRACT_NICKEL_PARAMETER[2], false);
+        addRecipe(new ItemStack(InitItems.CONTRACT_SILVER), new ItemStack(InitItems.MATRIX, 1, 7), CONTRACT_SILVER_PARAMETER[0], CONTRACT_SILVER_PARAMETER[1], CONTRACT_SILVER_PARAMETER[2], false);
+        addRecipe(new ItemStack(InitItems.CONTRACT_ALUMINIUM), new ItemStack(InitItems.MATRIX, 1, 8), CONTRACT_ALUMINIUM_PARAMETER[0], CONTRACT_ALUMINIUM_PARAMETER[1], CONTRACT_ALUMINIUM_PARAMETER[2], false);
+        addRecipe(new ItemStack(InitItems.CONTRACT_PLATINUM), new ItemStack(InitItems.MATRIX, 1, 9), CONTRACT_PLATINUM_PARAMETER[0], CONTRACT_PLATINUM_PARAMETER[1], CONTRACT_PLATINUM_PARAMETER[2], false);
     }
 
     public static RecipesFactory getRecipe(ItemStack input) {
         return RECIPES.get(input);
     }
 
-    public static void addRecipe(ItemStack input, ItemStack outputResource, int time, int energyPerTick, int fluidPerTick) {
+    public static void addRecipe(ItemStack input, ItemStack outputResource, int time, int energyPerTick, int fluidPerTick, boolean isConsume) {
         if (RECIPES.containsKey(input)) {
             throw new IllegalArgumentException("Duplicate recipe tried to register");
         }
         if (input.isEmpty() || outputResource.isEmpty()) {
             throw new IllegalArgumentException("Incoming item is empty");
         }
-        RecipesFactory recipesFactory = new RecipesFactory(input, outputResource, time, energyPerTick, fluidPerTick);
+        RecipesFactory recipesFactory = new RecipesFactory(input, outputResource, time, energyPerTick, fluidPerTick, isConsume);
         RECIPES.put(input, recipesFactory);
         ALL_RECIPES.add(recipesFactory);
     }

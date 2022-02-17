@@ -18,8 +18,8 @@ public class BloodFactory {
     public static final String NAME = "blood_factory";
 
     @ZenMethod
-    public static void addRecipe(IItemStack input, IItemStack outputResource, int time, int energyPerTick, int fluidPerTick) {
-        CTHandler.LATE_ADDITIONS.add(new Add(toStack(input), toStack(outputResource), time, energyPerTick, fluidPerTick));
+    public static void addRecipe(IItemStack input, IItemStack outputResource, int time, int energyPerTick, int fluidPerTick, boolean isConsume) {
+        CTHandler.LATE_ADDITIONS.add(new Add(toStack(input), toStack(outputResource), time, energyPerTick, fluidPerTick, isConsume));
     }
 
     @ZenMethod
@@ -30,19 +30,21 @@ public class BloodFactory {
     private static class Add extends BaseAction {
         ItemStack input, output;
         int time, energyPerTick, fluidPerTick;
+        boolean isConsume;
 
-        protected Add(ItemStack input, ItemStack output, int time, int energyPerTick, int fluidPerTick) {
+        protected Add(ItemStack input, ItemStack output, int time, int energyPerTick, int fluidPerTick, boolean isConsume) {
             super(NAME);
             this.input = input;
             this.output = output;
             this.time = time;
             this.energyPerTick = energyPerTick;
             this.fluidPerTick = fluidPerTick;
+            this.isConsume = isConsume;
         }
 
         @Override
         public void apply() {
-            RecipesFactoryHandler.addRecipe(input, output, time, energyPerTick, fluidPerTick);
+            RecipesFactoryHandler.addRecipe(input, output, time, energyPerTick, fluidPerTick, isConsume);
         }
     }
 
